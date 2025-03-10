@@ -3408,6 +3408,51 @@
       "presets": {
         "name": "Collapsible content"
       }
+    },
+    "marquee": {
+      "name": "Marquee",
+      "settings": {
+       "separator_type": {
+        "label": "Separator Type",
+        "options__1": {
+          "label": "Text"
+        },
+        "options__2": {
+          "label": "Image"
+        }
+       },
+       "separator_text": {
+        "label": "Separator Text",
+       },
+       "separator_image": {
+        "label": "Separator Image",
+        "info": "The image to use as separator when the separator type is image"
+       },
+       "separator_height": {
+        "label": "Separator Height",
+        "info": "The height of the image or text separator"
+       },
+       "background_color": {
+        "label": "Background Color",
+       },
+       "text_color": {
+        "label": "Text Color",
+       },
+       "separator_color": {
+        "label": "Separator Color",
+        "info": "The color of the separator when the separator type is text"
+       }
+      },
+      "blocks": {
+        "word": {
+          "name": "Word",
+          "settings": {
+            "text": {
+              "label": "Text",
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -3408,6 +3408,51 @@
       "presets": {
         "name": "Lista de pedidos rápidos"
       }
+    },
+    "marquee": {
+      "name": "Marquesina",
+      "settings": {
+       "separator_type": {
+        "label": "Tipo de separador",
+        "options__1": {
+          "label": "Texto"
+        },
+        "options__2": {
+          "label": "Imagen"
+        }
+       },
+       "separator_text": {
+        "label": "Texto del separador",
+       },
+       "separator_image": {
+        "label": "Imagen del separador",
+        "info": "La imagen a usar como separador cuando el tipo de separador es imagen"
+       },
+       "separator_height": {
+        "label": "Altura del separador",
+        "info": "La altura de la imagen o texto separador"
+       },
+       "background_color": {
+        "label": "Color de fondo",
+       },
+       "text_color": {
+        "label": "Color de texto",
+       },
+       "separator_color": {
+        "label": "Color del separador",
+        "info": "El color del separador cuando el tipo de separador es texto"
+       }
+      },
+      "blocks": {
+        "word": {
+          "name": "Palabra",
+          "settings": {
+            "text": {
+              "label": "Texto"
+            }
+          }
+        }
+      }
     }
   }
 }

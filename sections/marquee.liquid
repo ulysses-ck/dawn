@@ -61,20 +61,20 @@
 
 {% schema %}
 {
-  "name": "Marquee",
+  "name": "t:sections.marquee.name",
   "settings": [
     {
       "type": "select",
       "id": "separator_type",
-      "label": "Separator Type",
+      "label": "t:sections.marquee.settings.separator_type.label",
       "options": [
         {
           "value": "text",
-          "label": "Text"
+          "label": "t:sections.marquee.settings.separator_type.options__1.label"
         },
         {
           "value": "image",
-          "label": "Image"
+          "label": "t:sections.marquee.settings.separator_type.options__2.label"
         }
       ],
       "default": "text"
@@ -82,15 +82,15 @@
     {
       "type": "text",
       "id": "separator_text",
-      "label": "Text Separator",
+      "label": "t:sections.marquee.settings.separator_text.label",
       "default": "★",
-      "info": "The character or text to use as separator when Text type is selected"
+      "info": "t:sections.marquee.settings.separator_text.info"
     },
     {
       "type": "image_picker",
       "id": "separator_image",
-      "label": "Image Separator",
-      "info": "The image to use as separator when Image type is selected"
+      "label": "t:sections.marquee.settings.separator_image.label",
+      "info": "t:sections.marquee.settings.separator_image.info"
     },
     {
       "type": "range",
@@ -99,39 +99,39 @@
       "max": 48,
       "step": 2,
       "unit": "px",
-      "label": "Separator Size",
+      "label": "t:sections.marquee.settings.separator_height.label",
       "default": 16,
-      "info": "Height of the separator (for both text and image)"
+      "info": "t:sections.marquee.settings.separator_height.info"
     },
     {
       "type": "color",
       "id": "background_color",
-      "label": "Background Color",
+      "label": "t:sections.marquee.settings.background_color.label",
       "default": "#000000"
     },
     {
       "type": "color",
       "id": "text_color",
-      "label": "Text Color",
+      "label": "t:sections.marquee.settings.text_color.label",
       "default": "#ffffff"
     },
     {
       "type": "color",
       "id": "separator_color",
-      "label": "Separator Color",
+      "label": "t:sections.marquee.settings.separator_color.label",
       "default": "#ffffff",
-      "info": "Only applies to text separator"
+      "info": "t:sections.marquee.settings.separator_color.info"
     }
   ],
   "blocks": [
     {
       "type": "word",
-      "name": "Word",
+      "name": "t:sections.marquee.blocks.word.name",
       "settings": [
         {
           "type": "text",
           "id": "text",
-          "label": "Text",
+          "label": "t:sections.marquee.blocks.word.settings.text.label",
           "default": "High Quality Ingredients"
         }
       ]
