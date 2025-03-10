@@ -1,0 +1,115 @@
+{% style %}
+  .section-{{ section.id }} {
+    --marquee-background: {{ section.settings.background_color }};
+    --marquee-text-color: {{ section.settings.text_color }};
+    --marquee-separator-color: {{ section.settings.separator_color }};
+  }
+{% endstyle %}
+
+{{ 'section-marquee.css' | asset_url | stylesheet_tag }}
+
+<div class="section-{{ section.id }}">
+  <div class="marquee-container">
+    <div class="marquee-content">
+      {%- for i in (1..4) -%}
+        {% capture hidden %}
+          {% if i > 1 %}
+            true
+          {% endif %}
+        {% endcapture %}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'word' -%}
+            {%- if forloop.last and forloop.parentloop.last -%}
+              <span class="marquee-word" {{ block.shopify_attributes }} aria-hidden="{{ hidden }}">
+                {{- block.settings.text -}}
+              </span>
+              <span class="marquee-separator" aria-hidden="{{ hidden }}">{{ section.settings.separator }}</span>
+            {%- else -%}
+              <span class="marquee-separator" aria-hidden="{{ hidden }}">{{ section.settings.separator }}</span>
+              <span class="marquee-word" {{ block.shopify_attributes }} aria-hidden="{{ hidden }}">
+                {{- block.settings.text -}}
+              </span>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Marquee",
+  "settings": [
+    {
+      "type": "text",
+      "id": "separator",
+      "label": "Separator",
+      "default": "★"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "separator_color",
+      "label": "Separator Color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "word",
+      "name": "Word",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "High Quality Ingredients"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee",
+      "blocks": [
+        {
+          "type": "word",
+          "settings": {
+            "text": "High Quality Ingredients"
+          }
+        },
+        {
+          "type": "word",
+          "settings": {
+            "text": "Independently Certified"
+          }
+        },
+        {
+          "type": "word",
+          "settings": {
+            "text": "Expert Driven"
+          }
+        },
+        {
+          "type": "word",
+          "settings": {
+            "text": "Shipped Internationally"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
