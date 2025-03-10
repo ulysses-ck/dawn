@@ -1005,6 +1005,18 @@
         "image_2": {
           "label": "Imagen 2"
         },
+        "video": {
+          "label": "Video"
+        },
+        "type_of_media": {
+          "label": "Tipo de media",
+          "options__1": {
+            "label": "Imagen"
+          },
+          "options__2": {
+            "label": "Video"
+          }
+        },
         "stack_images_on_mobile": {
           "label": "Apilar imágenes"
         },
