@@ -1160,6 +1160,18 @@
         "image_2": {
           "label": "Image 2"
         },
+        "video": {
+          "label": "Video"
+        },
+        "type_of_media": {
+          "label": "Type of media",
+          "options__1": {
+            "label": "Image"
+          },
+          "options__2": {
+            "label": "Video"
+          }
+        },
         "image_overlay_opacity": {
           "label": "Overlay opacity"
         },
