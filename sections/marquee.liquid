@@ -12,20 +12,42 @@
   <div class="marquee-container">
     <div class="marquee-content">
       {%- for i in (1..4) -%}
-        {% capture hidden %}
-          {% if i > 1 %}
-            true
-          {% endif %}
-        {% endcapture %}
+        {% capture hidden %}{% if i > 1 %}true{% endif %}{% endcapture %}
         {%- for block in section.blocks -%}
           {%- if block.type == 'word' -%}
             {%- if forloop.last and forloop.parentloop.last -%}
               <span class="marquee-word" {{ block.shopify_attributes }} aria-hidden="{{ hidden }}">
                 {{- block.settings.text -}}
               </span>
-              <span class="marquee-separator" aria-hidden="{{ hidden }}">{{ section.settings.separator }}</span>
+              <span class="marquee-separator" aria-hidden="{{ hidden }}">
+                {%- if section.settings.separator_type == 'image' and section.settings.separator_image != blank -%}
+                  {{-
+                    section.settings.separator_image
+                    | image_url: width: section.settings.separator_height
+                    | image_tag:
+                      height: section.settings.separator_height,
+                      width: section.settings.separator_height,
+                      loading: 'lazy'
+                  -}}
+                {%- else -%}
+                  {{- section.settings.separator_text -}}
+                {%- endif -%}
+              </span>
             {%- else -%}
-              <span class="marquee-separator" aria-hidden="{{ hidden }}">{{ section.settings.separator }}</span>
+              <span class="marquee-separator" aria-hidden="{{ hidden }}">
+                {%- if section.settings.separator_type == 'image' and section.settings.separator_image != blank -%}
+                  {{-
+                    section.settings.separator_image
+                    | image_url: width: section.settings.separator_height
+                    | image_tag:
+                      height: section.settings.separator_height,
+                      width: section.settings.separator_height,
+                      loading: 'lazy'
+                  -}}
+                {%- else -%}
+                  {{- section.settings.separator_text -}}
+                {%- endif -%}
+              </span>
               <span class="marquee-word" {{ block.shopify_attributes }} aria-hidden="{{ hidden }}">
                 {{- block.settings.text -}}
               </span>
@@ -42,10 +64,44 @@
   "name": "Marquee",
   "settings": [
     {
+      "type": "select",
+      "id": "separator_type",
+      "label": "Separator Type",
+      "options": [
+        {
+          "value": "text",
+          "label": "Text"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ],
+      "default": "text"
+    },
+    {
       "type": "text",
-      "id": "separator",
-      "label": "Separator",
-      "default": "★"
+      "id": "separator_text",
+      "label": "Text Separator",
+      "default": "★",
+      "info": "The character or text to use as separator when Text type is selected"
+    },
+    {
+      "type": "image_picker",
+      "id": "separator_image",
+      "label": "Image Separator",
+      "info": "The image to use as separator when Image type is selected"
+    },
+    {
+      "type": "range",
+      "id": "separator_height",
+      "min": 12,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Separator Size",
+      "default": 16,
+      "info": "Height of the separator (for both text and image)"
     },
     {
       "type": "color",
@@ -63,7 +119,8 @@
       "type": "color",
       "id": "separator_color",
       "label": "Separator Color",
-      "default": "#ffffff"
+      "default": "#ffffff",
+      "info": "Only applies to text separator"
     }
   ],
   "blocks": [

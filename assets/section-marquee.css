@@ -32,6 +32,15 @@
 
 .marquee-separator {
   color: var(--marquee-separator-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marquee-separator img {
+  display: block;
+  height: auto;
+  max-width: none;
 }
 
 @keyframes marquee {
