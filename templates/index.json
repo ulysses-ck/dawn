@@ -27,6 +27,8 @@
         "button"
       ],
       "settings": {
+        "video": "shopify://files/videos/-f1d3-45a4-a2a8-c462f7e5812d.mp4",
+        "type_of_media": "video",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "image_behavior": "none",
@@ -37,6 +39,50 @@
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
         "show_text_below": false
+      }
+    },
+    "marquee_B4FNjD": {
+      "type": "marquee",
+      "blocks": {
+        "word_GXWH9C": {
+          "type": "word",
+          "settings": {
+            "text": "High Quality Ingredients"
+          }
+        },
+        "word_AbwEWJ": {
+          "type": "word",
+          "settings": {
+            "text": "Independently Certified"
+          }
+        },
+        "word_LD3iYq": {
+          "type": "word",
+          "settings": {
+            "text": "Expert Driven"
+          }
+        },
+        "word_mTN9JV": {
+          "type": "word",
+          "settings": {
+            "text": "Shipped Internationally"
+          }
+        }
+      },
+      "block_order": [
+        "word_GXWH9C",
+        "word_AbwEWJ",
+        "word_LD3iYq",
+        "word_mTN9JV"
+      ],
+      "settings": {
+        "separator_type": "image",
+        "separator_text": "★",
+        "separator_image": "shopify://shop_images/Star_5.png",
+        "separator_height": 16,
+        "background_color": "#000000",
+        "text_color": "#ffffff",
+        "separator_color": "#ffffff"
       }
     },
     "multicolumn_RF974w": {
@@ -289,6 +335,7 @@
   },
   "order": [
     "image_banner",
+    "marquee_B4FNjD",
     "multicolumn_RF974w",
     "featured_collection",
     "multicolumn_rWkTkm",
