@@ -85,6 +85,13 @@
         "separator_color": "#ffffff"
       }
     },
+    "brands_reviews": {
+      "type": "brands-reviews",
+      "settings": {
+        "background_color": "#000000",
+        "text_color": "#ffffff"
+      }
+    },
     "multicolumn_RF974w": {
       "type": "multicolumn",
       "blocks": {
@@ -336,6 +343,7 @@
   "order": [
     "image_banner",
     "marquee_B4FNjD",
+    "brands_reviews",
     "multicolumn_RF974w",
     "featured_collection",
     "multicolumn_rWkTkm",

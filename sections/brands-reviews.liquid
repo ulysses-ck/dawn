@@ -1,0 +1,82 @@
+{% style %}
+  .section-{{ section.id }} {
+    --brands-reviews-bg: {{ section.settings.background_color }};
+    --brands-reviews-bg-badge: {{ section.settings.background_color_badge }};
+    --brands-reviews-border-color: {{ section.settings.border_color }};
+    --brands-reviews-text-color: {{ section.settings.text_color }};
+    --brands-reviews-bg-image: {{ section.settings.background_image }};
+  }
+{% endstyle %}
+
+{{ 'section-brands-reviews.css' | asset_url | stylesheet_tag }}
+<div class="section-{{ section.id }} section-brands-reviews">
+  {% comment %} reviews {% endcomment %}
+  <div class="section-brands-reviews__reviews">
+    <div class="section-brands-reviews__reviews-badge">
+      <span>#1 Doctor Recommended</span>
+    </div>
+    <div class="section-brands-reviews__reviews-rating">
+      <div class="section-brands-reviews__reviews-rating-stars">
+        {% for i in (1..5) %}
+          {% if section.settings.rating_star != blank %}
+            <img
+              src="{{ section.settings.rating_star | image_url: width: 100 }}"
+              alt="{{ section.settings.rating_star.alt }}"
+              width="100"
+              height="100"
+            >
+          {% else %}
+            <span>★</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <span>12,000+</span>
+      <span>5-star reviews</span>
+    </div>
+  </div>
+
+  {% comment %} brands {% endcomment %}
+  <div class="section-brands-reviews__brands">
+    {% for block in section.blocks %}
+      <div class="section-brands-reviews__brands-image">
+        <img
+          src="{{ block.settings.image | image_url: width: 100 }}"
+          alt="{{ block.settings.image.alt }}"
+          width="100"
+          height="100"
+        >
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brands Reviews",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "rating_star",
+      "label": "Rating Star"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
