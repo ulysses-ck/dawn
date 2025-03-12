@@ -3453,6 +3453,51 @@
           }
         }
       }
+    },
+    "brands-reviews": {
+      "name": "Brands Reviews",
+      "settings": {
+        "rating_star": {
+          "label": "Rating Star"
+        },
+        "background_color": {
+          "label": "Background Color"
+        },
+        "header_badge": {
+          "label": "Header Badge"
+        },
+        "badge_text": {
+          "label": "Badge Text"
+        },
+        "rating_text": {
+          "label": "Rating Text"
+        },
+        "background_color_badge": {
+          "label": "Background Color Badge"
+        },
+        "text_color_badge": {
+          "label": "Text Color Badge"
+        },
+        "border_color_badge": {
+          "label": "Border Color Badge"
+        },
+        "header_card_brands": {
+          "label": "Header Card Brands"
+        },
+        "background_image": {
+          "label": "Background Color Image"
+        }
+      },
+      "blocks": {
+        "brand_image": {
+          "name": "Brand Image",
+          "settings": {
+            "image": {
+              "label": "Image"
+            }
+          }
+        }
+      }
     }
   }
 }
