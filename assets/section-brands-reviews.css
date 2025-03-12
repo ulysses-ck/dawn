@@ -2,7 +2,7 @@
   background-color: var(--brands-reviews-bg);
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
   
@@ -11,8 +11,7 @@
 
 .section-brands-reviews__reviews {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
   flex-direction: column;
 }
 
@@ -27,19 +26,35 @@
 .section-brands-reviews__brands {
   display: flex;
   align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .section-brands-reviews__brands-image {
   background-color: var(--brands-reviews-bg-image);
   border-radius: var(--buttons-radius);
-  width: 100%;
-  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 120px;
+  height: 40px;
+
+  padding: 0.5rem;
 }
 
 .section-brands-reviews__brands-image img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: scale-down;
+}
+
+.section-brands-reviews__reviews-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .section-brands-reviews__reviews-rating-stars {
