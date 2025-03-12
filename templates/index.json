@@ -87,9 +87,77 @@
     },
     "brands_reviews": {
       "type": "brands-reviews",
+      "blocks": {
+        "image_Bg69mD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/g49.png"
+          }
+        },
+        "image_p7DTAr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/950d12142c03c205d027fdbe85a37ede.png"
+          }
+        },
+        "image_TAB9V6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Path.png"
+          }
+        },
+        "image_czhrA6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Herb_Updated_Logo_Dark_Version_1.png"
+          }
+        },
+        "image_hmWQ7c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/NewYorkTimes_1.png"
+          }
+        },
+        "image_q3j4gB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group.png"
+          }
+        },
+        "image_DHLE9G": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/g49.png"
+          }
+        },
+        "image_h7MfYU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Herb_Updated_Logo_Dark_Version_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_Bg69mD",
+        "image_p7DTAr",
+        "image_TAB9V6",
+        "image_czhrA6",
+        "image_hmWQ7c",
+        "image_q3j4gB",
+        "image_DHLE9G",
+        "image_h7MfYU"
+      ],
       "settings": {
-        "background_color": "#000000",
-        "text_color": "#ffffff"
+        "rating_star": "shopify://shop_images/Vector.png",
+        "background_color": "#f6f6f5",
+        "badge_text": "<strong>#1 Doctor Recommended</strong>",
+        "rating_text": "12,000+ 5-star reviews",
+        "background_color_badge": "",
+        "text_color_badge": "#1b1f23",
+        "border_color_badge": "#000000",
+        "background_image": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "multicolumn_RF974w": {
