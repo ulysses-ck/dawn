@@ -120,7 +120,13 @@
     <div class="banner__media media{% if section.settings.video == blank %} placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
       {{
         section.settings.video
-        | video_tag: autoplay: true, muted: true, loop: true, controls: false, image_size: '1024x'
+        | video_tag:
+          autoplay: true,
+          muted: true,
+          loop: true,
+          controls: false,
+          image_size: '1024x',
+          class: 'banner__media-video'
       }}
     </div>
   {% endif %}
