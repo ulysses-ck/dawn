@@ -1,13 +1,12 @@
 .section-brands-reviews {
   background-color: var(--brands-reviews-bg);
-  width: var(--page-width);
-  margin: 0 auto;
-  padding: 2rem 0;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  
+  width: 100%;
 }
 
 .section-brands-reviews__reviews {
@@ -30,16 +29,16 @@
   align-items: center;
 }
 
-.section-brands-reviews__brands_image {
+.section-brands-reviews__brands-image {
   background-color: var(--brands-reviews-bg-image);
   border-radius: var(--buttons-radius);
   width: 100%;
   height: 100%;
 }
 
-.section-brands-reviews__brands_image img {
+.section-brands-reviews__brands-image img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 }
 
