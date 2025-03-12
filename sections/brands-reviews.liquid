@@ -6,6 +6,18 @@
     --brands-reviews-text-color: {{ section.settings.text_color_badge }};
     --brands-reviews-bg-image: {{ section.settings.background_image }};
   }
+
+  .section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
 {% endstyle %}
 
 {{ 'section-brands-reviews.css' | asset_url | stylesheet_tag }}
