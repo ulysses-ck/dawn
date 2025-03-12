@@ -166,8 +166,9 @@
         "column_zUiwFH": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/997c2aa242084a92c3cfd8674927555e.jpg",
+            "title": "<strong>Sleep</strong>",
+            "text": "<p>Optimize your sleep patterns.</p>",
             "link_label": "",
             "link": ""
           }
@@ -175,26 +176,9 @@
         "column_b8wacj": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_QtgKzj": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_zfGz77": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/1adce8ff03d61d72ebd773237c7c9dd6.jpg",
+            "title": "<strong>Cognitive Function</strong>",
+            "text": "<p>Enhance your brain's performance and connectivity</p>",
             "link_label": "",
             "link": ""
           }
@@ -202,8 +186,29 @@
         "column_Vrrfbj": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/7e6d5afa14d53ff0b6d598e9793856ab.png",
+            "title": "<strong>Promotional Health</strong>",
+            "text": "<p>Promoting healthy, natural deep sleep day to day</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_QtgKzj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/643a37948ecd36462f2e21db2ee9ea09.jpg",
+            "title": "<strong>Athletic Performance</strong>",
+            "text": "<p>Increase your health tissue, muscle and energy</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_zfGz77": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/7977a300e076716720c993cfe604a189.jpg",
+            "title": "<strong>Hormone Support</strong>",
+            "text": "<p>Boost your mood, libido and vitality</p>",
             "link_label": "",
             "link": ""
           }
@@ -212,9 +217,9 @@
       "block_order": [
         "column_zUiwFH",
         "column_b8wacj",
+        "column_Vrrfbj",
         "column_QtgKzj",
-        "column_zfGz77",
-        "column_Vrrfbj"
+        "column_zfGz77"
       ],
       "settings": {
         "title": "Start with your goals",
