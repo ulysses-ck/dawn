@@ -45,7 +45,11 @@
   <div class="section-brands-reviews__brands">
     {% for block in section.blocks %}
       <div class="section-brands-reviews__brands-image">
-        {{ block.settings.image | image_url: width: 200 | image_tag: width: 200 }}
+        {% if block.settings.image != blank %}
+          {{ block.settings.image | image_url: width: 200 | image_tag: width: 200 }}
+        {% else %}
+          {{ 'image' | placeholder_svg_tag }}
+        {% endif %}
       </div>
     {% endfor %}
   </div>
