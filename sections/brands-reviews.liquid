@@ -25,7 +25,7 @@
   {% comment %} reviews {% endcomment %}
   <div class="section-brands-reviews__reviews">
     <div class="section-brands-reviews__reviews-badge">
-      <span>#1 Doctor Recommended</span>
+      <span>{{ section.settings.badge_text }}</span>
     </div>
     <div class="section-brands-reviews__reviews-rating">
       <div class="section-brands-reviews__reviews-rating-stars">
@@ -37,8 +37,7 @@
           {% endif %}
         {% endfor %}
       </div>
-      <span>12,000+</span>
-      <span>5-star reviews</span>
+      <span>{{ section.settings.rating_text }}</span>
     </div>
   </div>
 
@@ -69,6 +68,18 @@
     {
       "type": "header",
       "content": "Badge"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "#1 Doctor Recommended"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "rating_text",
+      "label": "Rating Text",
+      "default": "12,000+ 5-star reviews"
     },
     {
       "type": "color",
