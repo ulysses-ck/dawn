@@ -3,6 +3,7 @@
 
   Accepts:
   - title: {String} The heading text
+  - custom_class_title: {String} The custom class of the heading
   - sub_title: {String} The sub heading text
   - sub_title_2: {String} The sub heading text
   - heading_size: {String} The size of the heading
@@ -28,19 +29,19 @@
 
 <div class="group-heading group-heading-{{ id }}">
   {% if sub_title %}
-    <h3 class="sub-title inline-richtext {{ sub_title_size }}">
+    <h3 class="sub-title inline-richtext {{ sub_title_size }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       {{ sub_title }}
     </h3>
   {% endif %}
 
   {% if title %}
-    <h2 class="title inline-richtext {{ heading_size }}">
+    <h2 class="title inline-richtext {{ heading_size }}{% if custom_class_title %} {{ custom_class_title }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       {{ title }}
     </h2>
   {% endif %}
 
   {% if sub_title_2 %}
-    <h3 class="sub-title inline-richtext {{ sub_title_size }}">
+    <h3 class="sub-title inline-richtext {{ sub_title_size }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       {{ sub_title_2 }}
     </h3>
   {% endif %}
