@@ -26,7 +26,7 @@
 
 {{ 'group-heading.css' | asset_url | stylesheet_tag }}
 
-<div class="group-heading-{{ id }}">
+<div class="group-heading group-heading-{{ id }}">
   {% if sub_title %}
     <h3 class="sub-title inline-richtext {{ sub_title_size }}">
       {{ sub_title }}

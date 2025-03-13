@@ -43,7 +43,8 @@
           sub_title_2: section.settings.sub_title_2,
           sub_title_2_size: section.settings.sub_title_2_size,
           alignment: section.settings.alignment,
-          fill_width: true
+          fill_width: true,
+          id: section.id
         %}
         {%- if section.settings.button_label != blank and show_mobile_slider -%}
           <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
