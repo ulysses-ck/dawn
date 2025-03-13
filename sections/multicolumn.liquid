@@ -5,9 +5,6 @@
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-
-    /* register custom property */
-    --multicolumn-design-layout: {{ section.settings.design_layout }};
   }
 
   @media screen and (min-width: 750px) {
@@ -129,7 +126,13 @@
                   </div>
                 </div>
               {%- endif -%}
-              <div class="multicolumn-card__info">
+              {% style %}
+                .block-{{ block.id }} {
+                  --multicolumn-custom-icon-size: {{ block.settings.custom_icon_size }}px;
+                  --multicolumn-design-layout: {{ block.settings.design_layout }};
+                }
+              {% endstyle %}
+              <div class="multicolumn-card__info block-{{ block.id }}">
                 <div>
                   {%- if block.settings.title != blank -%}
                     <h3 class="inline-richtext">{{ block.settings.title }}</h3>
@@ -150,21 +153,19 @@
                     <span class="link-label {% if block.settings.override_hide_link_label %}visually-hidden{% endif %}">
                       {{- block.settings.link_label | escape -}}
                     </span>
-                    <span class="svg-wrapper">
-                      <span class="icon-wrap">
-                        {% if block.settings.custom_icon != blank %}
-                          {% style %}
-                            .multicolumn-card__info .svg-wrapper {
-                              --multicolumn-custom-icon-size: {{ block.settings.custom_icon_size }}px;
-                            }
-                          {% endstyle %}
-
+                    {% if block.settings.custom_icon != blank %}
+                      <span class="svg-wrapper">
+                        <span class="icon-wrap">
                           {{ block.settings.custom_icon | image_url: width: 50 | image_tag: width: 50, height: 50 }}
-                        {% else %}
-                          {{ 'icon-arrow.svg' | inline_asset_content }}
-                        {% endif %}
+                        </span>
                       </span>
-                    </span>
+                    {% else %}
+                      <span class="svg-wrapper">
+                        <span class="icon-wrap">
+                          {{ 'icon-arrow.svg' | inline_asset_content }}
+                        </span>
+                      </span>
+                    {% endif %}
                   </a>
                 {%- endif -%}
               </div>
@@ -519,9 +520,18 @@
             {
               "value": "row",
               "label": "Row"
+            },
+            {
+              "value": "row-reverse",
+              "label": "Row Reverse"
+            },
+            {
+              "value": "column-reverse",
+              "label": "Column Reverse"
             }
           ],
-          "default": "row"
+          "default": "row",
+          "info": "The layout of the info section of the card."
         },
         {
           "type": "inline_richtext",
