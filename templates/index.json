@@ -200,7 +200,7 @@
             "text": "<p>Promoting healthy, natural deep sleep day to day</p>",
             "link_label": "Go to the page",
             "override_hide_link_label": true,
-            "link": "",
+            "link": "shopify://pages/trainers",
             "custom_icon": "shopify://shop_images/Component_2_1.png",
             "custom_icon_size": 37
           }
@@ -214,7 +214,7 @@
             "text": "<p>Increase your health tissue, muscle and energy</p>",
             "link_label": "Go to the page",
             "override_hide_link_label": true,
-            "link": "",
+            "link": "shopify://pages/trainers",
             "custom_icon": "shopify://shop_images/Component_2_1.png",
             "custom_icon_size": 37
           }
@@ -228,7 +228,7 @@
             "text": "<p>Boost your mood, libido and vitality</p>",
             "link_label": "Go to the page",
             "override_hide_link_label": true,
-            "link": "",
+            "link": "shopify://pages/trainers",
             "custom_icon": "shopify://shop_images/Component_2_1.png",
             "custom_icon_size": 37
           }
@@ -267,18 +267,21 @@
       "type": "featured-collection",
       "settings": {
         "collection": "hydrogen",
-        "products_to_show": 8,
+        "products_to_show": 14,
         "title": "<strong>{{ section.settings.collection.title }}</strong>",
         "heading_size": "h1",
-        "description": "<p>Trending</p>",
+        "description": "<p>🌟 Trending</p>",
         "show_description": false,
         "description_style": "subtitle",
+        "link_label": "View All",
+        "link_url": "shopify://collections/hydrogen",
         "columns_desktop": 4,
         "enable_desktop_slider": true,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "link",
         "color_scheme": "scheme-1",
+        "background_color": "#f6f6f5",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -297,49 +300,53 @@
         "column_AatYTE": {
           "type": "column",
           "settings": {
-            "design_layout": "row",
+            "design_layout": "column-reverse",
             "title": "We Make It Easy",
             "text": "<p>Personalized Solutions & Guidance Mean You Get Just What You Need Nothing More</p>",
-            "link_label": "",
-            "override_hide_link_label": false,
+            "link_label": "Link",
+            "override_hide_link_label": true,
             "link": "",
-            "custom_icon_size": 37
+            "custom_icon": "shopify://shop_images/Group_38770.png",
+            "custom_icon_size": 50
           }
         },
         "column_H6DhmN": {
           "type": "column",
           "settings": {
-            "design_layout": "row",
+            "design_layout": "column-reverse",
             "title": "Clean & Effective",
             "text": "<p>Proven Ingredients, not Artificial, Crafted By Experts For Optimal Effectiveness</p>",
-            "link_label": "",
-            "override_hide_link_label": false,
+            "link_label": "Link",
+            "override_hide_link_label": true,
             "link": "",
-            "custom_icon_size": 37
+            "custom_icon": "shopify://shop_images/Group_38770-1.png",
+            "custom_icon_size": 50
           }
         },
         "column_9AGT8H": {
           "type": "column",
           "settings": {
-            "design_layout": "row",
+            "design_layout": "column-reverse",
             "title": "Your Free Dietitian",
             "text": "<p>Every Gainful Subscriber Gets Free, 1:1 Access Their Own Registered Dietitian.</p>",
-            "link_label": "",
-            "override_hide_link_label": false,
+            "link_label": "Link",
+            "override_hide_link_label": true,
             "link": "",
-            "custom_icon_size": 37
+            "custom_icon": "shopify://shop_images/Group_38770-2.png",
+            "custom_icon_size": 50
           }
         },
         "column_8AjYq9": {
           "type": "column",
           "settings": {
-            "design_layout": "row",
+            "design_layout": "column-reverse",
             "title": "Made for you",
             "text": "<p>Performance is Personal. Personalized & Customizable Products For Your Needs, Body & Goals</p>",
-            "link_label": "",
-            "override_hide_link_label": false,
+            "link_label": "Link",
+            "override_hide_link_label": true,
             "link": "",
-            "custom_icon_size": 37
+            "custom_icon": "shopify://shop_images/Group_38770.png",
+            "custom_icon_size": 50
           }
         }
       },
@@ -350,9 +357,9 @@
         "column_8AjYq9"
       ],
       "settings": {
-        "title": "<strong>Clean Supplements - Made For You</strong>",
-        "heading_size": "h1",
-        "sub_title": "",
+        "title": "Clean Supplements - Made For You",
+        "heading_size": "h0",
+        "sub_title": "🧐 Why Health & Fitness",
         "sub_title_size": "h2",
         "sub_title_2": "",
         "sub_title_2_size": "h2",
@@ -381,12 +388,15 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
+        "link_label": "",
+        "link_url": "",
         "columns_desktop": 4,
         "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
         "color_scheme": "",
+        "background_color": "",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,
