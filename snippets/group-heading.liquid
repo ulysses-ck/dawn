@@ -8,9 +8,25 @@
   - heading_size: {String} The size of the heading
   - sub_title_size: {String} The size of the sub heading
   - layout_column: {Boolean} The layout of the heading, by default it's true, if set to false, the heading will be displayed in a row
+  - alignment: {String} The alignment of the heading
+  - id: {String} The id of the heading
+  - fill_width: {Boolean} The fill width of the heading, by default it's true, if set to false, the heading will not fill the width of the container
 {% endcomment %}
 
-<div class="group-heading">
+{% style %}
+  .group-heading-{{ id }} {
+    --group-heading-alignment: {{ alignment }};
+    {% if fill_width %}
+        --group-heading-fill-width: 100%;
+    {% else %}
+        --group-heading-fill-width: auto;
+    {% endif %}
+  }
+{% endstyle %}
+
+{{ 'group-heading.css' | asset_url | stylesheet_tag }}
+
+<div class="group-heading-{{ id }}">
   {% if sub_title %}
     <h3 class="sub-title inline-richtext {{ sub_title_size }}">
       {{ sub_title }}

@@ -41,7 +41,9 @@
           sub_title: section.settings.sub_title,
           sub_title_size: section.settings.sub_title_size,
           sub_title_2: section.settings.sub_title_2,
-          sub_title_2_size: section.settings.sub_title_2_size
+          sub_title_2_size: section.settings.sub_title_2_size,
+          alignment: section.settings.alignment,
+          fill_width: true
         %}
         {%- if section.settings.button_label != blank and show_mobile_slider -%}
           <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
@@ -322,6 +324,11 @@
       ],
       "default": "h2",
       "label": "Sub Title 2 Size"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Alignment"
     },
     {
       "type": "header",
