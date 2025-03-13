@@ -139,7 +139,9 @@
                       href="{{ block.settings.link }}"
                     {% endif %}
                   >
-                    {{- block.settings.link_label | escape -}}
+                    <span class="link-label {% if block.settings.override_hide_link_label != true %}visually-hidden{% endif %}">
+                      {{- block.settings.link_label | escape -}}
+                    </span>
                     <span class="svg-wrapper"
                       ><span class="icon-wrap">&nbsp;{{ 'icon-arrow.svg' | inline_asset_content }}</span></span
                     >
@@ -447,6 +449,13 @@
           "id": "link_label",
           "label": "t:sections.multicolumn.blocks.column.settings.link_label.label",
           "info": "t:sections.multicolumn.blocks.column.settings.link_label.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "override_hide_link_label",
+          "label": "Override Hide Link Label",
+          "info": "If enabled, the link label will be hidden even if it is set.",
+          "default": false
         },
         {
           "type": "url",
