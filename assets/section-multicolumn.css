@@ -222,9 +222,18 @@
   margin-top: 1.5rem;
 }
 
+.multicolumn-card__info .svg-wrapper {
+  width: var(--multicolumn-custom-icon-size);
+  height: auto;
+}
+
 .multicolumn-card__info .icon-wrap {
-  margin-left: 0.8rem;
   white-space: nowrap;
+}
+
+.multicolumn-card__info .icon-wrap img {
+  width: 100%;
+  height: auto;
 }
 
 @media screen and (min-width: 990px) {

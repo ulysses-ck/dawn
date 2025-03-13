@@ -139,12 +139,24 @@
                       href="{{ block.settings.link }}"
                     {% endif %}
                   >
-                    <span class="link-label {% if block.settings.override_hide_link_label != true %}visually-hidden{% endif %}">
+                    <span class="link-label {% if block.settings.override_hide_link_label %}visually-hidden{% endif %}">
                       {{- block.settings.link_label | escape -}}
                     </span>
-                    <span class="svg-wrapper"
-                      ><span class="icon-wrap">&nbsp;{{ 'icon-arrow.svg' | inline_asset_content }}</span></span
-                    >
+                    <span class="svg-wrapper">
+                      <span class="icon-wrap">
+                        {% if block.settings.custom_icon != blank %}
+                          {% style %}
+                            .multicolumn-card__info .svg-wrapper {
+                              --multicolumn-custom-icon-size: {{ block.settings.custom_icon_size }}px;
+                            }
+                          {% endstyle %}
+
+                          {{ block.settings.custom_icon | image_url: width: 50 | image_tag: width: 50, height: 50 }}
+                        {% else %}
+                          {{ 'icon-arrow.svg' | inline_asset_content }}
+                        {% endif %}
+                      </span>
+                    </span>
                   </a>
                 {%- endif -%}
               </div>
@@ -461,6 +473,22 @@
           "type": "url",
           "id": "link",
           "label": "t:sections.multicolumn.blocks.column.settings.link.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Custom Icon",
+          "info": "If an image is selected, it will be displayed instead of the default arrow icon."
+        },
+        {
+          "type": "range",
+          "id": "custom_icon_size",
+          "label": "Custom Icon Size",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 37,
+          "info": "The size of the custom icon."
         }
       ]
     }
