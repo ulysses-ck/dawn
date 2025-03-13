@@ -97,3 +97,6 @@
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
 }
+.custom-bg-color {
+  background-color: var(--custom-bg-color);
+}
