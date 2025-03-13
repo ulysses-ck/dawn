@@ -2,3 +2,7 @@
     width: var(--group-heading-fill-width);
     text-align: var(--group-heading-alignment);
 }
+
+.group-heading h2 {
+    margin: 0;
+}
