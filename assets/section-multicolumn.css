@@ -147,6 +147,8 @@
 
 .multicolumn-card__info {
   padding: 2.5rem;
+  display: flex;
+  flex-direction: var(--multicolumn-design-layout);
 }
 
 .background-none .multicolumn-card__info {
