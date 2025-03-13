@@ -12,6 +12,8 @@
   - alignment: {String} The alignment of the heading
   - id: {String} The id of the heading
   - fill_width: {Boolean} The fill width of the heading, by default it's true, if set to false, the heading will not fill the width of the container
+  - link_label: {String} The link label of the heading
+  - link_url: {String} The link url of the heading
 {% endcomment %}
 
 {% style %}
@@ -44,5 +46,9 @@
     <h3 class="sub-title inline-richtext {{ sub_title_size }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       {{ sub_title_2 }}
     </h3>
+  {% endif %}
+
+  {% if link_label and link_url %}
+    {{ link_label | link_to: link_url, class: 'link link-underline' }}
   {% endif %}
 </div>
