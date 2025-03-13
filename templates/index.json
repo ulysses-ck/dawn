@@ -266,7 +266,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "hydrogen",
+        "collection": "supplements",
         "products_to_show": 14,
         "title": "<strong>{{ section.settings.collection.title }}</strong>",
         "heading_size": "h1",
