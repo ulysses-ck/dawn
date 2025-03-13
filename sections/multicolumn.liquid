@@ -35,9 +35,14 @@
   >
     {%- unless section.settings.title == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
-          {{ section.settings.title }}
-        </h2>
+        {% render 'group-heading',
+          title: section.settings.title,
+          heading_size: section.settings.heading_size,
+          sub_title: section.settings.sub_title,
+          sub_title_size: section.settings.sub_title_size,
+          sub_title_2: section.settings.sub_title_2,
+          sub_title_2_size: section.settings.sub_title_2_size
+        %}
         {%- if section.settings.button_label != blank and show_mobile_slider -%}
           <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
             {{- section.settings.button_label | escape -}}
@@ -251,6 +256,72 @@
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "sub_title",
+      "label": "Sub Title"
+    },
+    {
+      "type": "select",
+      "id": "sub_title_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h2",
+      "label": "Sub Title Size"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "sub_title_2",
+      "label": "Sub Title 2"
+    },
+    {
+      "type": "select",
+      "id": "sub_title_2_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h2",
+      "label": "Sub Title 2 Size"
     },
     {
       "type": "header",

@@ -1,0 +1,31 @@
+{% comment %}
+  Renders at least one heading, and optionally a second sub heading above and a third sub heading below.
+
+  Accepts:
+  - title: {String} The heading text
+  - sub_title: {String} The sub heading text
+  - sub_title_2: {String} The sub heading text
+  - heading_size: {String} The size of the heading
+  - sub_title_size: {String} The size of the sub heading
+  - layout_column: {Boolean} The layout of the heading, by default it's true, if set to false, the heading will be displayed in a row
+{% endcomment %}
+
+<div class="group-heading">
+  {% if sub_title %}
+    <h3 class="sub-title inline-richtext {{ sub_title_size }}">
+      {{ sub_title }}
+    </h3>
+  {% endif %}
+
+  {% if title %}
+    <h2 class="title inline-richtext {{ heading_size }}">
+      {{ title }}
+    </h2>
+  {% endif %}
+
+  {% if sub_title_2 %}
+    <h3 class="sub-title inline-richtext {{ sub_title_size }}">
+      {{ sub_title_2 }}
+    </h3>
+  {% endif %}
+</div>
