@@ -1,0 +1,147 @@
+{% style %}
+  .section-{{ section.id }} {
+    --brands-reviews-bg: {{ section.settings.background_color }};
+    --brands-reviews-bg-badge: {{ section.settings.background_color_badge }};
+    --brands-reviews-border-color: {{ section.settings.border_color_badge }};
+    --brands-reviews-text-color: {{ section.settings.text_color_badge }};
+    --brands-reviews-bg-image: {{ section.settings.background_image }};
+  }
+
+  .section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+{{ 'section-brands-reviews.css' | asset_url | stylesheet_tag }}
+<div class="page-width section-{{ section.id }} section-brands-reviews">
+  {% comment %} reviews {% endcomment %}
+  <div class="section-brands-reviews__reviews">
+    <div class="section-brands-reviews__reviews-badge">
+      <span>{{ section.settings.badge_text }}</span>
+    </div>
+    <div class="section-brands-reviews__reviews-rating">
+      <div class="section-brands-reviews__reviews-rating-stars">
+        {% for i in (1..5) %}
+          {% if section.settings.rating_star != blank %}
+            {{ section.settings.rating_star | image_url: width: 100 | image_tag: width: 100 }}
+          {% else %}
+            <span>★</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <span>{{ section.settings.rating_text }}</span>
+    </div>
+  </div>
+
+  {% comment %} brands {% endcomment %}
+  <div class="section-brands-reviews__brands">
+    {% for block in section.blocks %}
+      <div class="section-brands-reviews__brands-image">
+        {% if block.settings.image != blank %}
+          {{ block.settings.image | image_url: width: 200 | image_tag: width: 200 }}
+        {% else %}
+          {{ 'image' | placeholder_svg_tag }}
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.brands-reviews.name",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "rating_star",
+      "label": "t:sections.brands-reviews.settings.rating_star.label"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.brands-reviews.settings.background_color.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.brands-reviews.settings.header_badge.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "badge_text",
+      "label": "t:sections.brands-reviews.settings.badge_text.label",
+      "default": "#1 Doctor Recommended"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "rating_text",
+      "label": "t:sections.brands-reviews.settings.rating_text.label",
+      "default": "12,000+ 5-star reviews"
+    },
+    {
+      "type": "color",
+      "id": "background_color_badge",
+      "label": "t:sections.brands-reviews.settings.background_color_badge.label"
+    },
+    {
+      "type": "color",
+      "id": "text_color_badge",
+      "label": "t:sections.brands-reviews.settings.text_color_badge.label"
+    },
+    {
+      "type": "color",
+      "id": "border_color_badge",
+      "label": "t:sections.brands-reviews.settings.border_color_badge.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.brands-reviews.settings.header_card_brands.label"
+    },
+    {
+      "type": "color",
+      "id": "background_image",
+      "label": "t:sections.brands-reviews.settings.background_image.label"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "t:sections.brands-reviews.blocks.brand_image.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.brands-reviews.blocks.brand_image.settings.image.label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

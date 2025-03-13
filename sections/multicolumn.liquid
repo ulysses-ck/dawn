@@ -32,9 +32,17 @@
   >
     {%- unless section.settings.title == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
-          {{ section.settings.title }}
-        </h2>
+        {% render 'group-heading',
+          title: section.settings.title,
+          heading_size: section.settings.heading_size,
+          sub_title: section.settings.sub_title,
+          sub_title_size: section.settings.sub_title_size,
+          sub_title_2: section.settings.sub_title_2,
+          sub_title_2_size: section.settings.sub_title_2_size,
+          alignment: section.settings.alignment,
+          fill_width: true,
+          id: section.id
+        %}
         {%- if section.settings.button_label != blank and show_mobile_slider -%}
           <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
             {{- section.settings.button_label | escape -}}
@@ -118,13 +126,21 @@
                   </div>
                 </div>
               {%- endif -%}
-              <div class="multicolumn-card__info">
-                {%- if block.settings.title != blank -%}
-                  <h3 class="inline-richtext">{{ block.settings.title }}</h3>
-                {%- endif -%}
-                {%- if block.settings.text != blank -%}
-                  <div class="rte">{{ block.settings.text }}</div>
-                {%- endif -%}
+              {% style %}
+                .block-{{ block.id }} {
+                  --multicolumn-custom-icon-size: {{ block.settings.custom_icon_size }}px;
+                  --multicolumn-design-layout: {{ block.settings.design_layout }};
+                }
+              {% endstyle %}
+              <div class="multicolumn-card__info block-{{ block.id }}">
+                <div>
+                  {%- if block.settings.title != blank -%}
+                    <h3 class="inline-richtext">{{ block.settings.title }}</h3>
+                  {%- endif -%}
+                  {%- if block.settings.text != blank -%}
+                    <div class="rte">{{ block.settings.text }}</div>
+                  {%- endif -%}
+                </div>
                 {%- if block.settings.link_label != blank -%}
                   <a
                     class="link animate-arrow"
@@ -134,10 +150,22 @@
                       href="{{ block.settings.link }}"
                     {% endif %}
                   >
-                    {{- block.settings.link_label | escape -}}
-                    <span class="svg-wrapper"
-                      ><span class="icon-wrap">&nbsp;{{ 'icon-arrow.svg' | inline_asset_content }}</span></span
-                    >
+                    <span class="link-label {% if block.settings.override_hide_link_label %}visually-hidden{% endif %}">
+                      {{- block.settings.link_label | escape -}}
+                    </span>
+                    {% if block.settings.custom_icon != blank %}
+                      <span class="svg-wrapper">
+                        <span class="icon-wrap">
+                          {{ block.settings.custom_icon | image_url: width: 50 | image_tag: width: 50, height: 50 }}
+                        </span>
+                      </span>
+                    {% else %}
+                      <span class="svg-wrapper">
+                        <span class="icon-wrap">
+                          {{ 'icon-arrow.svg' | inline_asset_content }}
+                        </span>
+                      </span>
+                    {% endif %}
                   </a>
                 {%- endif -%}
               </div>
@@ -234,9 +262,80 @@
       "label": "t:sections.all.heading_size.label"
     },
     {
+      "type": "inline_richtext",
+      "id": "sub_title",
+      "label": "Sub Title"
+    },
+    {
+      "type": "select",
+      "id": "sub_title_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h2",
+      "label": "Sub Title Size"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_title_2",
+      "label": "Sub Title 2"
+    },
+    {
+      "type": "select",
+      "id": "sub_title_2_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h2",
+      "label": "Sub Title 2 Size"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Alignment"
+    },
+    {
       "type": "header",
       "content": "t:sections.multicolumn.settings.header_image.content"
-    },    
+    },
     {
       "type": "select",
       "id": "image_width",
@@ -284,23 +383,23 @@
     {
       "type": "header",
       "content": "t:sections.multicolumn.settings.header_button.content"
-    },    
+    },
     {
       "type": "text",
       "id": "button_label",
       "default": "t:sections.multicolumn.settings.button_label.default",
-      "label": "t:sections.multicolumn.settings.button_label.label", 
+      "label": "t:sections.multicolumn.settings.button_label.label",
       "info": "t:sections.multicolumn.settings.button_label.info"
     },
     {
       "type": "url",
       "id": "button_link",
       "label": "t:sections.multicolumn.settings.button_link.label"
-    },    
+    },
     {
       "type": "header",
       "content": "t:sections.multicolumn.settings.header_layout.content"
-    },     
+    },
     {
       "type": "range",
       "id": "columns_desktop",
@@ -347,7 +446,7 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
-    },    
+    },
     {
       "type": "header",
       "content": "t:sections.multicolumn.settings.header_mobile.content"
@@ -410,6 +509,31 @@
           "label": "t:sections.multicolumn.blocks.column.settings.image.label"
         },
         {
+          "type": "select",
+          "id": "design_layout",
+          "label": "Design Layout",
+          "options": [
+            {
+              "value": "column",
+              "label": "Column"
+            },
+            {
+              "value": "row",
+              "label": "Row"
+            },
+            {
+              "value": "row-reverse",
+              "label": "Row Reverse"
+            },
+            {
+              "value": "column-reverse",
+              "label": "Column Reverse"
+            }
+          ],
+          "default": "row",
+          "info": "The layout of the info section of the card."
+        },
+        {
           "type": "inline_richtext",
           "id": "title",
           "default": "t:sections.multicolumn.blocks.column.settings.title.default",
@@ -428,9 +552,32 @@
           "info": "t:sections.multicolumn.blocks.column.settings.link_label.info"
         },
         {
+          "type": "checkbox",
+          "id": "override_hide_link_label",
+          "label": "Override Hide Link Label",
+          "info": "If enabled, the link label will be hidden even if it is set.",
+          "default": false
+        },
+        {
           "type": "url",
           "id": "link",
           "label": "t:sections.multicolumn.blocks.column.settings.link.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Custom Icon",
+          "info": "If an image is selected, it will be displayed instead of the default arrow icon."
+        },
+        {
+          "type": "range",
+          "id": "custom_icon_size",
+          "label": "Custom Icon Size",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 37,
+          "info": "The size of the custom icon."
         }
       ]
     }

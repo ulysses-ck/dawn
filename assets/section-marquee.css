@@ -1,0 +1,57 @@
+.marquee-container {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  overflow: hidden;
+  height: 3.5rem;
+  background-color: var(--marquee-background);
+  --animate-marquee: marquee 8s linear infinite;
+}
+
+.marquee-content {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: max-content;
+  padding-left: 1rem;
+  animation: var(--animate-marquee);
+}
+
+.marquee-word {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--marquee-text-color);
+}
+
+.marquee-separator {
+  color: var(--marquee-separator-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marquee-separator img {
+  display: block;
+  height: auto;
+  max-width: none;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-content {
+    animation-play-state: paused;
+  }
+}

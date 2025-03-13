@@ -1,0 +1,54 @@
+{% comment %}
+  Renders at least one heading, and optionally a second sub heading above and a third sub heading below.
+
+  Accepts:
+  - title: {String} The heading text
+  - custom_class_title: {String} The custom class of the heading
+  - sub_title: {String} The sub heading text
+  - sub_title_2: {String} The sub heading text
+  - heading_size: {String} The size of the heading
+  - sub_title_size: {String} The size of the sub heading
+  - layout_column: {Boolean} The layout of the heading, by default it's true, if set to false, the heading will be displayed in a row
+  - alignment: {String} The alignment of the heading
+  - id: {String} The id of the heading
+  - fill_width: {Boolean} The fill width of the heading, by default it's true, if set to false, the heading will not fill the width of the container
+  - link_label: {String} The link label of the heading
+  - link_url: {String} The link url of the heading
+{% endcomment %}
+
+{% style %}
+  .group-heading-{{ id }} {
+    --group-heading-alignment: {{ alignment }};
+    {% if fill_width %}
+        --group-heading-fill-width: 100%;
+    {% else %}
+        --group-heading-fill-width: auto;
+    {% endif %}
+  }
+{% endstyle %}
+
+{{ 'group-heading.css' | asset_url | stylesheet_tag }}
+
+<div class="group-heading group-heading-{{ id }}">
+  {% if sub_title %}
+    <h3 class="sub-title inline-richtext {{ sub_title_size }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {{ sub_title }}
+    </h3>
+  {% endif %}
+
+  {% if title %}
+    <h2 class="title inline-richtext {{ heading_size }}{% if custom_class_title %} {{ custom_class_title }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {{ title }}
+    </h2>
+  {% endif %}
+
+  {% if sub_title_2 %}
+    <h3 class="sub-title inline-richtext {{ sub_title_size }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {{ sub_title_2 }}
+    </h3>
+  {% endif %}
+
+  {% if link_label and link_url %}
+    {{ link_label | link_to: link_url, class: 'link link-underline' }}
+  {% endif %}
+</div>

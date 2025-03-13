@@ -1,0 +1,80 @@
+.section-brands-reviews {
+  background-color: var(--brands-reviews-bg);
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  
+  width: 100%;
+}
+
+.section-brands-reviews__reviews {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.section-brands-reviews__reviews-badge {
+  background-color: var(--brands-reviews-bg-badge);
+  border: 1px solid var(--brands-reviews-border-color);
+  border-radius: var(--buttons-radius);
+  padding: 0.5rem 1rem;
+  color: var(--brands-reviews-text-color);
+}
+
+.section-brands-reviews__brands {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.section-brands-reviews__brands-image {
+  background-color: var(--brands-reviews-bg-image);
+  border-radius: var(--buttons-radius);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 120px;
+  height: 40px;
+
+  padding: 0.5rem;
+}
+
+.section-brands-reviews__brands-image img {
+  width: 100%;
+  height: auto;
+  object-fit: scale-down;
+}
+
+.section-brands-reviews__reviews-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.section-brands-reviews__reviews-rating-stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-brands-reviews__reviews-rating-stars img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .section-brands-reviews {
+    flex-direction: row;
+  }
+}
+
+

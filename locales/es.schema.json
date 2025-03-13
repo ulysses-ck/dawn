@@ -1005,6 +1005,18 @@
         "image_2": {
           "label": "Imagen 2"
         },
+        "video": {
+          "label": "Video"
+        },
+        "type_of_media": {
+          "label": "Tipo de media",
+          "options__1": {
+            "label": "Imagen"
+          },
+          "options__2": {
+            "label": "Video"
+          }
+        },
         "stack_images_on_mobile": {
           "label": "Apilar imágenes"
         },
@@ -3395,6 +3407,96 @@
       },
       "presets": {
         "name": "Lista de pedidos rápidos"
+      }
+    },
+    "marquee": {
+      "name": "Marquesina",
+      "settings": {
+       "separator_type": {
+        "label": "Tipo de separador",
+        "options__1": {
+          "label": "Texto"
+        },
+        "options__2": {
+          "label": "Imagen"
+        }
+       },
+       "separator_text": {
+        "label": "Texto del separador",
+       },
+       "separator_image": {
+        "label": "Imagen del separador",
+        "info": "La imagen a usar como separador cuando el tipo de separador es imagen"
+       },
+       "separator_height": {
+        "label": "Altura del separador",
+        "info": "La altura de la imagen o texto separador"
+       },
+       "background_color": {
+        "label": "Color de fondo",
+       },
+       "text_color": {
+        "label": "Color de texto",
+       },
+       "separator_color": {
+        "label": "Color del separador",
+        "info": "El color del separador cuando el tipo de separador es texto"
+       }
+      },
+      "blocks": {
+        "word": {
+          "name": "Palabra",
+          "settings": {
+            "text": {
+              "label": "Texto"
+            }
+          }
+        }
+      }
+    },
+    "brands-reviews": {
+      "name": "Reseñas y marcas",
+      "settings": {
+        "rating_star": {
+          "label": "Estrella de calificación"
+        },
+        "background_color": {
+          "label": "Color de fondo"
+        },
+        "header_badge": {
+          "label": "Encabezado de la insignia"
+        },
+        "badge_text": {
+          "label": "Texto de la insignia"
+        },
+        "rating_text": {
+          "label": "Texto de la calificación"
+        },
+        "background_color_badge": {
+          "label": "Color de fondo de la insignia"
+        },
+        "text_color_badge": {
+          "label": "Color de texto de la insignia"
+        },
+        "border_color_badge": {
+          "label": "Color del borde de la insignia"
+        },
+        "header_card_brands": {
+          "label": "Encabezado de las marcas"
+        },
+        "background_image": {
+          "label": "Color de fondo de la imagen"
+        }
+      },
+      "blocks": {
+        "brand_image": {
+          "name": "Imagen de la marca",
+          "settings": {
+            "image": {
+              "label": "Imagen"
+            }
+          }
+        }
       }
     }
   }

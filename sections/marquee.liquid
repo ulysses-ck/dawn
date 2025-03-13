@@ -1,0 +1,172 @@
+{% style %}
+  .section-{{ section.id }} {
+    --marquee-background: {{ section.settings.background_color }};
+    --marquee-text-color: {{ section.settings.text_color }};
+    --marquee-separator-color: {{ section.settings.separator_color }};
+  }
+{% endstyle %}
+
+{{ 'section-marquee.css' | asset_url | stylesheet_tag }}
+
+<div class="section-{{ section.id }}">
+  <div class="marquee-container">
+    <div class="marquee-content">
+      {%- for i in (1..4) -%}
+        {% capture hidden %}{% if i > 1 %}true{% endif %}{% endcapture %}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'word' -%}
+            {%- if forloop.last and forloop.parentloop.last -%}
+              <span class="marquee-word" {{ block.shopify_attributes }} aria-hidden="{{ hidden }}">
+                {{- block.settings.text -}}
+              </span>
+              <span class="marquee-separator" aria-hidden="{{ hidden }}">
+                {%- if section.settings.separator_type == 'image' and section.settings.separator_image != blank -%}
+                  {{-
+                    section.settings.separator_image
+                    | image_url: width: section.settings.separator_height
+                    | image_tag:
+                      height: section.settings.separator_height,
+                      width: section.settings.separator_height,
+                      loading: 'lazy'
+                  -}}
+                {%- else -%}
+                  {{- section.settings.separator_text -}}
+                {%- endif -%}
+              </span>
+            {%- else -%}
+              <span class="marquee-separator" aria-hidden="{{ hidden }}">
+                {%- if section.settings.separator_type == 'image' and section.settings.separator_image != blank -%}
+                  {{-
+                    section.settings.separator_image
+                    | image_url: width: section.settings.separator_height
+                    | image_tag:
+                      height: section.settings.separator_height,
+                      width: section.settings.separator_height,
+                      loading: 'lazy'
+                  -}}
+                {%- else -%}
+                  {{- section.settings.separator_text -}}
+                {%- endif -%}
+              </span>
+              <span class="marquee-word" {{ block.shopify_attributes }} aria-hidden="{{ hidden }}">
+                {{- block.settings.text -}}
+              </span>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.marquee.name",
+  "settings": [
+    {
+      "type": "select",
+      "id": "separator_type",
+      "label": "t:sections.marquee.settings.separator_type.label",
+      "options": [
+        {
+          "value": "text",
+          "label": "t:sections.marquee.settings.separator_type.options__1.label"
+        },
+        {
+          "value": "image",
+          "label": "t:sections.marquee.settings.separator_type.options__2.label"
+        }
+      ],
+      "default": "text"
+    },
+    {
+      "type": "text",
+      "id": "separator_text",
+      "label": "t:sections.marquee.settings.separator_text.label",
+      "default": "★",
+      "info": "t:sections.marquee.settings.separator_text.info"
+    },
+    {
+      "type": "image_picker",
+      "id": "separator_image",
+      "label": "t:sections.marquee.settings.separator_image.label",
+      "info": "t:sections.marquee.settings.separator_image.info"
+    },
+    {
+      "type": "range",
+      "id": "separator_height",
+      "min": 12,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.marquee.settings.separator_height.label",
+      "default": 16,
+      "info": "t:sections.marquee.settings.separator_height.info"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.marquee.settings.background_color.label",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.marquee.settings.text_color.label",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "separator_color",
+      "label": "t:sections.marquee.settings.separator_color.label",
+      "default": "#ffffff",
+      "info": "t:sections.marquee.settings.separator_color.info"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "word",
+      "name": "t:sections.marquee.blocks.word.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:sections.marquee.blocks.word.settings.text.label",
+          "default": "High Quality Ingredients"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee",
+      "blocks": [
+        {
+          "type": "word",
+          "settings": {
+            "text": "High Quality Ingredients"
+          }
+        },
+        {
+          "type": "word",
+          "settings": {
+            "text": "Independently Certified"
+          }
+        },
+        {
+          "type": "word",
+          "settings": {
+            "text": "Expert Driven"
+          }
+        },
+        {
+          "type": "word",
+          "settings": {
+            "text": "Shipped Internationally"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

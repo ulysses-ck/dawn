@@ -1160,6 +1160,18 @@
         "image_2": {
           "label": "Image 2"
         },
+        "video": {
+          "label": "Video"
+        },
+        "type_of_media": {
+          "label": "Type of media",
+          "options__1": {
+            "label": "Image"
+          },
+          "options__2": {
+            "label": "Video"
+          }
+        },
         "image_overlay_opacity": {
           "label": "Overlay opacity"
         },
@@ -3395,6 +3407,96 @@
       },
       "presets": {
         "name": "Collapsible content"
+      }
+    },
+    "marquee": {
+      "name": "Marquee",
+      "settings": {
+       "separator_type": {
+        "label": "Separator Type",
+        "options__1": {
+          "label": "Text"
+        },
+        "options__2": {
+          "label": "Image"
+        }
+       },
+       "separator_text": {
+        "label": "Separator Text",
+       },
+       "separator_image": {
+        "label": "Separator Image",
+        "info": "The image to use as separator when the separator type is image"
+       },
+       "separator_height": {
+        "label": "Separator Height",
+        "info": "The height of the image or text separator"
+       },
+       "background_color": {
+        "label": "Background Color",
+       },
+       "text_color": {
+        "label": "Text Color",
+       },
+       "separator_color": {
+        "label": "Separator Color",
+        "info": "The color of the separator when the separator type is text"
+       }
+      },
+      "blocks": {
+        "word": {
+          "name": "Word",
+          "settings": {
+            "text": {
+              "label": "Text",
+            }
+          }
+        }
+      }
+    },
+    "brands-reviews": {
+      "name": "Brands Reviews",
+      "settings": {
+        "rating_star": {
+          "label": "Rating Star"
+        },
+        "background_color": {
+          "label": "Background Color"
+        },
+        "header_badge": {
+          "label": "Header Badge"
+        },
+        "badge_text": {
+          "label": "Badge Text"
+        },
+        "rating_text": {
+          "label": "Rating Text"
+        },
+        "background_color_badge": {
+          "label": "Background Color Badge"
+        },
+        "text_color_badge": {
+          "label": "Text Color Badge"
+        },
+        "border_color_badge": {
+          "label": "Border Color Badge"
+        },
+        "header_card_brands": {
+          "label": "Header Card Brands"
+        },
+        "background_image": {
+          "label": "Background Color Image"
+        }
+      },
+      "blocks": {
+        "brand_image": {
+          "name": "Brand Image",
+          "settings": {
+            "image": {
+              "label": "Image"
+            }
+          }
+        }
       }
     }
   }

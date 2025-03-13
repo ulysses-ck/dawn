@@ -6,23 +6,16 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
+            "heading": "Great things never came from comfort zones.",
             "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "Shop now",
             "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
+            "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -31,169 +24,442 @@
       },
       "block_order": [
         "heading",
-        "text",
         "button"
       ],
       "settings": {
+        "video": "shopify://files/videos/-f1d3-45a4-a2a8-c462f7e5812d.mp4",
+        "type_of_media": "video",
         "image_overlay_opacity": 40,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
         "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
+        "color_scheme": "scheme-2",
         "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
         "show_text_below": false
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "marquee_B4FNjD": {
+      "type": "marquee",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "word_GXWH9C": {
+          "type": "word",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "text": "High Quality Ingredients"
           }
         },
-        "text": {
-          "type": "text",
+        "word_AbwEWJ": {
+          "type": "word",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "Independently Certified"
+          }
+        },
+        "word_LD3iYq": {
+          "type": "word",
+          "settings": {
+            "text": "Expert Driven"
+          }
+        },
+        "word_mTN9JV": {
+          "type": "word",
+          "settings": {
+            "text": "Shipped Internationally"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "word_GXWH9C",
+        "word_AbwEWJ",
+        "word_LD3iYq",
+        "word_mTN9JV"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
+        "separator_type": "image",
+        "separator_text": "★",
+        "separator_image": "shopify://shop_images/Star_5.png",
+        "separator_height": 16,
+        "background_color": "#000000",
+        "text_color": "#ffffff",
+        "separator_color": "#ffffff"
+      }
+    },
+    "brands_reviews": {
+      "type": "brands-reviews",
+      "blocks": {
+        "image_Bg69mD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/g49.png"
+          }
+        },
+        "image_p7DTAr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/950d12142c03c205d027fdbe85a37ede.png"
+          }
+        },
+        "image_TAB9V6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Path.png"
+          }
+        },
+        "image_czhrA6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Herb_Updated_Logo_Dark_Version_1.png"
+          }
+        },
+        "image_hmWQ7c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/NewYorkTimes_1.png"
+          }
+        },
+        "image_q3j4gB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group.png"
+          }
+        },
+        "image_DHLE9G": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/g49.png"
+          }
+        },
+        "image_h7MfYU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Herb_Updated_Logo_Dark_Version_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_Bg69mD",
+        "image_p7DTAr",
+        "image_TAB9V6",
+        "image_czhrA6",
+        "image_hmWQ7c",
+        "image_q3j4gB",
+        "image_DHLE9G",
+        "image_h7MfYU"
+      ],
+      "settings": {
+        "rating_star": "shopify://shop_images/Vector.png",
+        "background_color": "#f6f6f5",
+        "badge_text": "<strong>#1 Doctor Recommended</strong>",
+        "rating_text": "12,000+ 5-star reviews",
+        "background_color_badge": "",
+        "text_color_badge": "#1b1f23",
+        "border_color_badge": "#000000",
+        "background_image": "#ffffff",
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_RF974w": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_zUiwFH": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/997c2aa242084a92c3cfd8674927555e.jpg",
+            "design_layout": "row",
+            "title": "<strong>Sleep</strong>",
+            "text": "<p>Optimize your sleep patterns.</p>",
+            "link_label": "Go to the page",
+            "override_hide_link_label": true,
+            "link": "shopify://pages/trainers",
+            "custom_icon": "shopify://shop_images/Component_2_1.png",
+            "custom_icon_size": 37
+          }
+        },
+        "column_b8wacj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/1adce8ff03d61d72ebd773237c7c9dd6.jpg",
+            "design_layout": "row",
+            "title": "<strong>Cognitive Function</strong>",
+            "text": "<p>Enhance your brain's performance and connectivity</p>",
+            "link_label": "Go to the page",
+            "override_hide_link_label": true,
+            "link": "shopify://pages/trainers",
+            "custom_icon": "shopify://shop_images/Component_2_1.png",
+            "custom_icon_size": 37
+          }
+        },
+        "column_Vrrfbj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/7e6d5afa14d53ff0b6d598e9793856ab.png",
+            "design_layout": "row",
+            "title": "<strong>Promotional Health</strong>",
+            "text": "<p>Promoting healthy, natural deep sleep day to day</p>",
+            "link_label": "Go to the page",
+            "override_hide_link_label": true,
+            "link": "shopify://pages/trainers",
+            "custom_icon": "shopify://shop_images/Component_2_1.png",
+            "custom_icon_size": 37
+          }
+        },
+        "column_QtgKzj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/643a37948ecd36462f2e21db2ee9ea09.jpg",
+            "design_layout": "row",
+            "title": "<strong>Athletic Performance</strong>",
+            "text": "<p>Increase your health tissue, muscle and energy</p>",
+            "link_label": "Go to the page",
+            "override_hide_link_label": true,
+            "link": "shopify://pages/trainers",
+            "custom_icon": "shopify://shop_images/Component_2_1.png",
+            "custom_icon_size": 37
+          }
+        },
+        "column_zfGz77": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/7977a300e076716720c993cfe604a189.jpg",
+            "design_layout": "row",
+            "title": "<strong>Hormone Support</strong>",
+            "text": "<p>Boost your mood, libido and vitality</p>",
+            "link_label": "Go to the page",
+            "override_hide_link_label": true,
+            "link": "shopify://pages/trainers",
+            "custom_icon": "shopify://shop_images/Component_2_1.png",
+            "custom_icon_size": 37
+          }
+        }
+      },
+      "block_order": [
+        "column_zUiwFH",
+        "column_b8wacj",
+        "column_Vrrfbj",
+        "column_QtgKzj",
+        "column_zfGz77"
+      ],
+      "settings": {
+        "title": "Start with your goals",
+        "heading_size": "h0",
+        "sub_title": "COMFORTABLY UNCOMFORTABLE",
+        "sub_title_size": "h2",
+        "sub_title_2": "<p>We cannot become what we want to be  by<br/>remaining what we are.</p>",
+        "sub_title_2_size": "h2",
+        "alignment": "center",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 5,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
+        "collection": "supplements",
+        "products_to_show": 14,
+        "title": "<strong>{{ section.settings.collection.title }}</strong>",
+        "heading_size": "h1",
+        "description": "<p>🌟 Trending</p>",
+        "show_description": false,
+        "description_style": "subtitle",
+        "link_label": "View All",
+        "link_url": "shopify://collections/hydrogen",
         "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
         "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
+        "background_color": "#f6f6f5",
         "image_ratio": "adapt",
+        "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 28,
         "padding_bottom": 36
       }
     },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
+    "multicolumn_rWkTkm": {
       "type": "multicolumn",
       "blocks": {
-        "column1": {
+        "column_AatYTE": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "design_layout": "column-reverse",
+            "title": "We Make It Easy",
+            "text": "<p>Personalized Solutions & Guidance Mean You Get Just What You Need Nothing More</p>",
+            "link_label": "Link",
+            "override_hide_link_label": true,
+            "link": "",
+            "custom_icon": "shopify://shop_images/Group_38770.png",
+            "custom_icon_size": 50
           }
         },
-        "column2": {
+        "column_H6DhmN": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "design_layout": "column-reverse",
+            "title": "Clean & Effective",
+            "text": "<p>Proven Ingredients, not Artificial, Crafted By Experts For Optimal Effectiveness</p>",
+            "link_label": "Link",
+            "override_hide_link_label": true,
+            "link": "",
+            "custom_icon": "shopify://shop_images/Group_38770-1.png",
+            "custom_icon_size": 50
           }
         },
-        "column3": {
+        "column_9AGT8H": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "design_layout": "column-reverse",
+            "title": "Your Free Dietitian",
+            "text": "<p>Every Gainful Subscriber Gets Free, 1:1 Access Their Own Registered Dietitian.</p>",
+            "link_label": "Link",
+            "override_hide_link_label": true,
+            "link": "",
+            "custom_icon": "shopify://shop_images/Group_38770-2.png",
+            "custom_icon_size": 50
+          }
+        },
+        "column_8AjYq9": {
+          "type": "column",
+          "settings": {
+            "design_layout": "column-reverse",
+            "title": "Made for you",
+            "text": "<p>Performance is Personal. Personalized & Customizable Products For Your Needs, Body & Goals</p>",
+            "link_label": "Link",
+            "override_hide_link_label": true,
+            "link": "",
+            "custom_icon": "shopify://shop_images/Group_38770.png",
+            "custom_icon_size": 50
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "column_AatYTE",
+        "column_H6DhmN",
+        "column_9AGT8H",
+        "column_8AjYq9"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
+        "title": "Clean Supplements - Made For You",
+        "heading_size": "h0",
+        "sub_title": "🧐 Why Health & Fitness",
+        "sub_title_size": "h2",
+        "sub_title_2": "",
+        "sub_title_2_size": "h2",
+        "alignment": "left",
+        "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
         "button_label": "",
         "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
         "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_WBU8wg": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "automated-collection",
+        "products_to_show": 4,
+        "title": "<strong>{{ section.settings.collection.title }}</strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "link_label": "",
+        "link_url": "",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "background_color": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_blog_AyWAxz": {
+      "type": "featured-blog",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "heading": "<strong>Latest Articles</strong>",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collage_VhDctU": {
+      "type": "collage",
+      "blocks": {
+        "image_tmXk6w": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1eedbeee8e2ac3ae1779c55abddedda1.jpg"
+          }
+        },
+        "image_KXYQpJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/8685771e8012fc7315b4da64384c03b2.jpg"
+          }
+        },
+        "image_xqkHay": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/eda489af3bb195329ed761744130f2c5.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_tmXk6w",
+        "image_KXYQpJ",
+        "image_xqkHay"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -201,10 +467,13 @@
   },
   "order": [
     "image_banner",
-    "rich_text",
+    "marquee_B4FNjD",
+    "brands_reviews",
+    "multicolumn_RF974w",
     "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "multicolumn_rWkTkm",
+    "featured_collection_WBU8wg",
+    "featured_blog_AyWAxz",
+    "collage_VhDctU"
   ]
 }
